@@ -16,27 +16,27 @@ namespace BuilderHouseExampleNamespace
         }
         public void Reset()
         {
-            _product = new Product(); // переустанавливает _product на новый экземпляр класса Product(). Это выполняется для сброса состояния строителя и подготовки к созданию нового продукта.
+            _product = new Product();
         }
         public void BuildFoundation()
         {
-            _product.Add("Фундамент"); // добавляет "Фундамент" в список частей продукта _parts с помощью метода Add() объекта _product.
+            _product.Add("Фундамент");
         }
         public void BuildPartWallOne()
         {
-            _product.Add("Стена 1"); // добавляет "Стена 1" в список частей продукта _parts с помощью метода Add() объекта _product.
+            _product.Add("Стена 1");
         }
         public void BuildPartWallTwo()
         {
-            _product.Add("Стена 2"); // добавляет "Стена 2" в список частей продукта _parts с помощью метода Add() объекта _product.
+            _product.Add("Стена 2");
         }
         public void BuildPartWallThree()
         {
-            _product.Add("Стена 3"); // добавляет "Стена 3" в список частей продукта _parts с помощью метода Add() объекта _product.
+            _product.Add("Стена 3");
         }
         public void BuildPartWallFour()
         {
-            _product.Add("Стена 4"); // добавляет "Стена 4" в список частей продукта _parts с помощью метода Add() объекта _product.
+            _product.Add("Стена 4");
         }
 
         public void BuildPartRoof()
@@ -45,11 +45,11 @@ namespace BuilderHouseExampleNamespace
         }
         public Product GetProduct()
         {
-            Product result = _product; // // сохраняет текущий _product в локальную переменную result.
+            Product result = _product;
 
-            Reset(); // Этот метод для сброса состояния строителя, чтобы гарантировать, что при следующем вызове метода GetProduct() будет создан новый продукт.
+            Reset();
 
-            return result; // Наконец, метод возвращает сохраненный result, представляющий готовый продукт.
+            return result;
         }
     }
 }

@@ -8,11 +8,11 @@ namespace BuilderHouseExampleNamespace
 {
     public class Product
     {
-        private List<object> _parts = new List<object>(); // представляет список частей продукта. 
+        private List<object> _parts = new List<object>();
 
         public void Add(string part)
         {
-            _parts.Add(part); // добавляет переданную часть part в список _parts
+            _parts.Add(part);
         }
 
         public string ListParts()

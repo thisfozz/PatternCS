@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace BuilderHouseExampleNamespace
 {
-    /*
-        * Класс Director не имеет своего собственного метода для создания объекта продукта, так как это ответственность строителя. 
-        * Вместо этого Director работает с заданным строителем, вызывая его методы построения в нужной последовательности для создания определенного типа продукта.
-        * Однако класс Director играет важную роль в координации и управлении процессом построения продукта с помощью строителя. 
-        * Он предоставляет удобный интерфейс для клиента и определяет определенные шаги построения, которые строитель должен выполнить.
-    */
-    public class Director // отвечает за управление процессом создания продукта
+    public class Director
     {
         private IBuilder _builder;
 
-        public IBuilder Builder // Это свойство используется для внедрения зависимости от конкретного строителя (ConcreteBuilder) через интерфейс IBuilder.
+        public Director(IBuilder _builder)
         {
-            set { _builder = value; }
+            this._builder = _builder;
         }
-        public void BuildMinimalViableProduct() //  Этот метод строит только минимально жизнеспособный продукт, выполняя необходимые операции построения для части A.
+        public void BuildMinimalViableProduct()
         {
             _builder.BuildFoundation();
         }
-        public void BuildFullFeaturedProduct() // Этот метод строит полнофункциональный продукт, выполняя все необходимые операции построения полнофункционального продукта
+        public void BuildFullFeaturedProduct()
         {
             _builder.BuildFoundation();
             _builder.BuildPartWallOne();

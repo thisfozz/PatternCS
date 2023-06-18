@@ -1,8 +1,8 @@
 ﻿using BuilderGameChapterNamespace;
 using BuilderHouseExampleNamespace;
 
-//BuilderHouseExample();
-BuilderCharacterGameExample();
+BuilderHouseExample();
+//BuilderCharacterGameExample();
 
 void BuilderCharacterGameExample()
 {
@@ -37,9 +37,8 @@ void BuilderCharacterGameExample()
 }
 void BuilderHouseExample()
 {
-    var director = new Director();
     var builder = new ConcreteBuilder();
-    director.Builder = builder;
+    var director = new Director(builder);
 
     Console.WriteLine("Минимальная базовая часть дома");
     director.BuildMinimalViableProduct();
