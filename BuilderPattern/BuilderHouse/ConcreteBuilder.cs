@@ -12,7 +12,7 @@ namespace BuilderHouseExampleNamespace
 
         public ConcreteBuilder()
         {
-            Reset(); //  сбрасывает состояние объекта строителя, чтобы гарантировать, что при создании нового продукта состояние строителя будет чистым.
+            Reset();
         }
         public void Reset()
         {
