@@ -1,9 +1,44 @@
-﻿using BuilderGameChapterNamespace;
+﻿using Builder.BuilderPattern.BuilderHouse.BuildHouseNotPattern.LargeConstructor;
+using Builder.BuilderPattern.BuilderHouse.BuildHouseNotPattern.SeparateСlasses;
+using BuilderGameChapterNamespace;
 using BuilderHouseExampleNamespace;
 
-BuilderHouseExample();
+BuilderHouseNotPatternExampleTwo();
+
+void BuilderHouseNotPatternExampleTwo()
+{
+    var house = new House("деревянный фундамент", "деревянная стена 1", "деревянная стена 2", "деревянная стена 3", "деревянная стена 4", "деревянная крыша");
+    Console.WriteLine(house);
+}
+
+//BuilderHouseNotPatternExampleOne();
+//BuilderHouseExample();
 //BuilderCharacterGameExample();
 
+void BuilderHouseNotPatternExampleOne()
+{
+    Console.WriteLine("Деревянный дом: ");
+    var woodenHouse = new WoodenHouse();
+    woodenHouse.BuildFoundation();
+    woodenHouse.BuildPartWallOne();
+    woodenHouse.BuildPartWallTwo();
+    woodenHouse.BuildPartWallThree();
+    woodenHouse.BuildPartWallFour();
+    woodenHouse.BuildPartRoof();
+    woodenHouse.BuildGarage();
+    Console.WriteLine(woodenHouse.GetProduct().ListParts());
+
+    Console.WriteLine("Кирпичный дом: ");
+    var brickHouse = new BrickHouse();
+    brickHouse.BuildFoundation();
+    brickHouse.BuildPartWallOne();
+    brickHouse.BuildPartWallTwo();
+    brickHouse.BuildPartWallThree();
+    brickHouse.BuildPartWallFour();
+    brickHouse.BuildPartRoof();
+    brickHouse.BuildGarage();
+    Console.WriteLine(brickHouse.GetProduct().ListParts());
+}
 void BuilderCharacterGameExample()
 {
     var builder = new CharacterBuilder();
