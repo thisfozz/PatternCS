@@ -40,21 +40,38 @@ void BuilderHouseExample()
     var builder = new ConcreteBuilder();
     var director = new Director(builder);
 
-    Console.WriteLine("Минимальная базовая часть дома");
-    director.BuildMinimalViableProduct();
+    Console.WriteLine("Деревянный дом");
+    director.BuildWoodenHouse();
     Console.WriteLine(builder.GetProduct().ListParts());
 
     Console.WriteLine("-------------------------------\n");
 
-    Console.WriteLine("Построенный дом состоит из: ");
-    director.BuildFullFeaturedProduct();
+    Console.WriteLine("Кирпичный дом: ");
+    director.BuildBrickHouse();
     Console.WriteLine(builder.GetProduct().ListParts());
 
     Console.WriteLine("-------------------------------\n");
 
-    Console.WriteLine("Кастомный дом: ");
-    builder.BuildFoundation();
-    builder.BuildPartWallOne();
-    builder.BuildPartWallTwo();
-    Console.Write(builder.GetProduct().ListParts());
+    Console.WriteLine("Кастомный дом с бассейном: ");
+    builder.BuildFoundation("каменный");
+    builder.BuildPartWallOne("каменный");
+    builder.BuildPartWallTwo("каменный");
+    builder.BuildPartWallThree("каменный");
+    builder.BuildPartWallFour("каменный");
+    builder.BuildPartRoof("каменный");
+    builder.BuildPool();
+    Console.WriteLine(builder.GetProduct().ListParts());
+
+    Console.WriteLine("-------------------------------\n");
+
+    Console.WriteLine("Кастомный дом с бассейном и гаражом: ");
+    builder.BuildFoundation("каменный");
+    builder.BuildPartWallOne("каменный");
+    builder.BuildPartWallTwo("каменный");
+    builder.BuildPartWallThree("каменный");
+    builder.BuildPartWallFour("каменный");
+    builder.BuildPartRoof("каменный");
+    builder.BuildPool();
+    builder.BuildGarage();
+    Console.WriteLine(builder.GetProduct().ListParts());
 }

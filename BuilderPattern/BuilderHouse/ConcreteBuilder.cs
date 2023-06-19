@@ -8,7 +8,7 @@ namespace BuilderHouseExampleNamespace
 {
     public class ConcreteBuilder : IBuilder
     {
-        private Product _product = new Product(); // представляет собой создаваемый продукт
+        private Product _product = new Product();
 
         public ConcreteBuilder()
         {
@@ -18,31 +18,39 @@ namespace BuilderHouseExampleNamespace
         {
             _product = new Product();
         }
-        public void BuildFoundation()
+        public void BuildFoundation(string material)
         {
-            _product.Add("Фундамент");
+            _product.Add($"{material} фундамент");
         }
-        public void BuildPartWallOne()
+        public void BuildPartWallOne(string material)
         {
-            _product.Add("Стена 1");
+            _product.Add($"{material} стена 1") ;
         }
-        public void BuildPartWallTwo()
+        public void BuildPartWallTwo(string material)
         {
-            _product.Add("Стена 2");
+            _product.Add($"{material} стена 2");
         }
-        public void BuildPartWallThree()
+        public void BuildPartWallThree(string material)
         {
-            _product.Add("Стена 3");
+            _product.Add($"{material} стена 3");
         }
-        public void BuildPartWallFour()
+        public void BuildPartWallFour(string material)
         {
-            _product.Add("Стена 4");
+            _product.Add($"{material} стена 4");
+        }
+        public void BuildPartRoof(string material)
+        {
+            _product.Add($"{material} крыша");
+        }
+        public void BuildPool()
+        {
+            _product.Add("бассейн");
+        }
+        public void BuildGarage()
+        {
+            _product.Add("гараж");
         }
 
-        public void BuildPartRoof()
-        {
-            _product.Add("Крыша");
-        }
         public Product GetProduct()
         {
             Product result = _product;

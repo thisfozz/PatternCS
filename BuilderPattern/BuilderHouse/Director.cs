@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuilderHouseExampleNamespace
+﻿namespace BuilderHouseExampleNamespace
 {
     public class Director
     {
@@ -14,18 +8,23 @@ namespace BuilderHouseExampleNamespace
         {
             this._builder = _builder;
         }
-        public void BuildMinimalViableProduct()
+        public void BuildWoodenHouse()
         {
-            _builder.BuildFoundation();
+            _builder.BuildFoundation("деревянный");
+            _builder.BuildPartWallOne("деревянный");
+            _builder.BuildPartWallTwo("деревянный");
+            _builder.BuildPartWallThree("деревянный");
+            _builder.BuildPartWallFour("деревянный");
+            _builder.BuildPartRoof("деревянный");
         }
-        public void BuildFullFeaturedProduct()
+        public void BuildBrickHouse()
         {
-            _builder.BuildFoundation();
-            _builder.BuildPartWallOne();
-            _builder.BuildPartWallTwo();
-            _builder.BuildPartWallThree();
-            _builder.BuildPartWallFour();
-            _builder.BuildPartRoof();
+            _builder.BuildFoundation("кирпичный");
+            _builder.BuildPartWallOne("кирпичный");
+            _builder.BuildPartWallTwo("кирпичный");
+            _builder.BuildPartWallThree("кирпичный");
+            _builder.BuildPartWallFour("кирпичный");
+            _builder.BuildPartRoof("кирпичный");
         }
     }
 }

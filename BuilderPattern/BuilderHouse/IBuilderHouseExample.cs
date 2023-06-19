@@ -8,11 +8,13 @@ namespace BuilderHouseExampleNamespace
 {
     public interface IBuilder
     {
-        void BuildFoundation();
-        void BuildPartWallOne();
-        void BuildPartWallTwo();
-        void BuildPartWallThree();
-        void BuildPartWallFour();
-        void BuildPartRoof();
+        void BuildFoundation(string material);
+        void BuildPartWallOne(string material);
+        void BuildPartWallTwo(string material);
+        void BuildPartWallThree(string material);
+        void BuildPartWallFour(string material);
+        void BuildPartRoof(string material);
+        void BuildPool();
+        void BuildGarage();
     }
 }
